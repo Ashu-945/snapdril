@@ -243,52 +243,96 @@ export function About() {
           ))}
         </motion.div>
 
-        {/* Team Section */}
+        {/* Advanced Team Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="mt-24"
+          className="mt-24 relative"
         >
-          <h3 className="mb-10 text-center text-2xl font-black sm:text-3xl md:mb-12 md:text-4xl">
-            <span className="gradient-text">Our Creative</span>{" "}
-            <span className="gradient-text-alt">Core Strengths</span>
+          {/* Background glow for the section */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[300px] bg-sky-500/10 blur-[120px] pointer-events-none rounded-full" />
+          
+          <h3 className="mb-10 text-center text-3xl font-black sm:text-4xl md:mb-16 md:text-5xl tracking-tight">
+            <span className="text-white">Our Creative</span>{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-indigo-400 drop-shadow-[0_0_15px_rgba(98,168,255,0.4)]">Core Strengths</span>
           </h3>
-          <div className="grid gap-5 md:grid-cols-3 md:gap-8">
-            {team.map((member, index) => (
+          <div className="grid gap-6 md:grid-cols-3 md:gap-8 max-w-6xl mx-auto z-10 relative">
+            {[
+               {
+                 name: "SnapDrill Studio",
+                 role: "Photography Direction",
+                 image: "/snapdrill-media/logoPhoto.jpg",
+                 color: "from-sky-400 to-blue-600",
+                 tags: ["Camera Ops", "Lighting", "Framing"]
+               },
+               {
+                 name: "Visual Reels Unit",
+                 role: "Short-Form Production",
+                 image: "/snapdrill-media/photoF.jpg",
+                 color: "from-indigo-400 to-purple-600",
+                 tags: ["Editing", "Transitions", "Color Grading"]
+               },
+               {
+                 name: "Brand Content Desk",
+                 role: "Creative Strategy",
+                 image: "/snapdrill-media/photoA.jpg",
+                 color: "from-blue-400 to-cyan-600",
+                 tags: ["Marketing", "Trends", "Scripts"]
+               }
+            ].map((member, index) => (
               <motion.div
                 key={member.name}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.15 }}
-                whileHover={{ y: -12 }}
-                className="rounded-3xl glass-card p-6 text-center card-hover-lift robot-panel sm:p-8"
               >
-                <motion.div 
-                  className={`relative mx-auto mb-6 h-28 w-28 overflow-hidden rounded-full p-1.5 bg-gradient-to-br ${member.color}`}
-                  whileHover={{ scale: 1.1 }}
-                  style={{ boxShadow: `0 15px 40px rgba(98, 168, 255, 0.22)` }}
-                >
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="h-full w-full rounded-full object-cover"
-                  />
-                </motion.div>
-                <h4 className="text-xl font-black gradient-text">{member.name}</h4>
-                <p className="text-sm text-muted-foreground font-medium mt-1">{member.role}</p>
-                
-                {/* Social icons placeholder */}
-                <div className="flex justify-center gap-3 mt-4">
-                  {[0, 1, 2].map((i) => (
-                    <motion.div
-                      key={i}
-                      className={`h-8 w-8 rounded-full bg-gradient-to-br ${member.color} opacity-70`}
-                      whileHover={{ scale: 1.2, opacity: 1 }}
+                <div className="group relative h-full rounded-[2rem] border border-white/10 bg-[#0a0f18]/80 backdrop-blur-xl p-8 text-center shadow-[0_10px_30px_rgba(0,0,0,0.5)] transition-all hover:-translate-y-3 hover:border-sky-500/40 hover:shadow-[0_20px_40px_-15px_rgba(98,168,255,0.4)] overflow-hidden">
+                  
+                  {/* Subtle Top Gradient Line */}
+                  <div className={`absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r ${member.color} opacity-70 group-hover:opacity-100 transition-opacity`} />
+                  
+                  {/* Holographic Inner Glow on Hover */}
+                  <div className={`absolute inset-0 bg-gradient-to-b ${member.color} opacity-0 group-hover:opacity-[0.05] transition-opacity duration-500 pointer-events-none`} />
+
+                  {/* High-Tech Circular Image Wrapper */}
+                  <div className="relative mx-auto mb-8 h-32 w-32 mt-4">
+                    {/* Rotating Dashed Ring */}
+                    <motion.div 
+                      className="absolute -inset-4 rounded-full border-[3px] border-dashed border-sky-400/30"
+                      animate={{ rotate: 360 }}
+                      transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
                     />
-                  ))}
+                    {/* Rotating Solid Ring opposite direction */}
+                    <motion.div 
+                      className="absolute -inset-1 rounded-full border-t-[3px] border-b-[3px] border-sky-300/50 shadow-[0_0_15px_rgba(98,168,255,0.3)]"
+                      animate={{ rotate: -360 }}
+                      transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+                    />
+                    
+                    <div className="relative h-full w-full overflow-hidden rounded-full border-2 border-white/20 bg-black p-1 shadow-inner z-10">
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        className="h-full w-full rounded-full object-cover transition-transform duration-700 group-hover:scale-110 blur-[1px] group-hover:blur-0"
+                      />
+                    </div>
+                  </div>
+
+                  <h4 className="text-2xl font-black text-white drop-shadow-md mb-1.5 transition-colors group-hover:text-sky-300">{member.name}</h4>
+                  <p className="text-xs font-bold tracking-widest uppercase text-sky-400/80 mb-6">{member.role}</p>
+                  
+                  {/* Skill/Role Badges */}
+                  <div className="flex flex-wrap justify-center gap-2 mt-auto">
+                    {member.tags.map((tag, i) => (
+                      <span key={i} className="rounded-md border border-white/5 bg-white-[0.03] py-1.5 px-3 text-[10px] font-mono text-white/50 uppercase tracking-wider group-hover:border-sky-400/30 group-hover:text-white/90 group-hover:bg-sky-500/10 transition-all duration-300">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  
                 </div>
               </motion.div>
             ))}

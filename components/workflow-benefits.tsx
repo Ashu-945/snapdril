@@ -108,29 +108,59 @@ export function WorkflowBenefits() {
           ))}
         </div>
 
-        {/* Target Audience Section */}
+        {/* Extreme Target Audience Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-sky-600 to-indigo-700 p-8 text-center shadow-2xl sm:p-12"
+          className="relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-[#0a0f18] p-8 sm:p-12 md:p-16 shadow-2xl"
         >
-          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1000')] opacity-10 mix-blend-overlay object-cover" />
-          <h2 className="text-2xl sm:text-3xl font-black text-white mb-8 relative z-10">
-            Ideal for Businesses Like Yours
+          {/* Animated Tech Background */}
+          <div className="absolute inset-0 opacity-30 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-sky-600/30 via-[#0a0f18] to-[#0a0f18]" />
+          <motion.div 
+             className="absolute -top-40 -right-40 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl pointer-events-none"
+             animate={{ scale: [1, 1.2, 1] }} transition={{ duration: 6, repeat: Infinity }}
+          />
+          <motion.div 
+             className="absolute -bottom-40 -left-40 w-96 h-96 bg-indigo-500/20 rounded-full blur-3xl pointer-events-none"
+             animate={{ scale: [1, 1.3, 1] }} transition={{ duration: 7, repeat: Infinity }}
+          />
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:40px_40px] mix-blend-overlay" />
+
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-center mb-12 relative z-10 tracking-tight">
+            <span className="text-white">Ideal for </span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-indigo-400 drop-shadow-[0_0_15px_rgba(98,168,255,0.4)]">Businesses Like Yours</span>
           </h2>
-          <div className="flex flex-wrap justify-center gap-4 relative z-10">
+          
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-6 relative z-10 w-full">
             {[
-              { label: "Cake Shops & Cafes", icon: Coffee },
-              { label: "Showrooms", icon: Car },
-              { label: "Retail Stores", icon: Store },
-              { label: "Beauty Salons", icon: Scissors },
-              { label: "Home Businesses", icon: Home },
+              { label: "Cake Shops & Cafes", icon: Coffee, glow: "from-amber-500/20 to-orange-600/20", border: "hover:border-amber-400/50" },
+              { label: "Showrooms", icon: Car, glow: "from-sky-500/20 to-blue-600/20", border: "hover:border-sky-400/50" },
+              { label: "Retail Stores", icon: Store, glow: "from-indigo-500/20 to-purple-600/20", border: "hover:border-indigo-400/50" },
+              { label: "Beauty Salons", icon: Scissors, glow: "from-pink-500/20 to-rose-600/20", border: "hover:border-pink-400/50" },
+              { label: "Home Businesses", icon: Home, glow: "from-emerald-500/20 to-teal-600/20", border: "hover:border-emerald-400/50" },
             ].map((audience, idx) => (
-              <span key={idx} className="bg-white/20 backdrop-blur-md px-6 py-3 rounded-full text-white font-semibold text-sm flex items-center gap-2 border border-white/20">
-                <audience.icon size={16} />
-                {audience.label}
-              </span>
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, scale: 0.8, y: 20 }}
+                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1, type: "spring", stiffness: 200, damping: 20 }}
+                whileHover={{ y: -8, scale: 1.05 }}
+                className={`group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md px-6 py-4 sm:px-8 sm:py-5 flex items-center gap-4 shadow-xl transition-all duration-300 ${audience.border} cursor-pointer w-full sm:w-auto`}
+              >
+                <div className={`absolute inset-0 bg-gradient-to-br ${audience.glow} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+                <motion.div 
+                  className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white/10 shadow-inner group-hover:bg-white/20 transition-colors"
+                  whileHover={{ rotate: [0, -10, 10, 0] }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <audience.icon size={20} className="text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]" />
+                </motion.div>
+                <span className="relative z-10 text-white font-bold text-base sm:text-lg tracking-wide group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-white/70 transition-all duration-300">
+                  {audience.label}
+                </span>
+              </motion.div>
             ))}
           </div>
         </motion.div>
