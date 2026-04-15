@@ -59,7 +59,7 @@ const packages = [
 
 export function Packages() {
   return (
-    <section className="relative overflow-hidden px-4 py-20 sm:px-6 md:px-8 md:py-28">
+    <section className="relative overflow-hidden px-4 py-12 sm:px-6 md:px-8 md:py-16">
       <div className="section-shell mx-auto max-w-7xl">
         {/* Section Header */}
         <motion.div
@@ -67,7 +67,7 @@ export function Packages() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="mb-12 text-center md:mb-16"
+          className="mb-8 text-center md:mb-10"
         >
           <motion.span 
             className="mb-4 inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-bold uppercase tracking-[0.28em] glass-card robot-panel sm:px-5 sm:text-sm"
@@ -77,7 +77,7 @@ export function Packages() {
             <Zap className="h-4 w-4 text-sky-300" />
             <span className="gradient-text-vibrant">Pricing Plans</span>
           </motion.span>
-          <h2 className="mb-4 text-3xl font-black tracking-tight sm:text-4xl md:text-5xl lg:text-7xl">
+          <h2 className="mb-4 text-3xl font-black tracking-tight sm:text-4xl md:text-5xl lg:text-6xl">
             <span className="gradient-text">Choose Your</span>
             <br />
             <span className="gradient-text-alt">Perfect Package</span>

@@ -27,25 +27,23 @@ const workflows = [
 ]
 
 const benefits = [
-  { icon: TrendingUp, title: "Boost Online Visibility", desc: "Increase your brand's reach and get noticed by more potential customers online." },
-  { icon: Zap, title: "Professional Brand Image", desc: "Elevate your brand with high-quality visuals and consistent, cohesive messaging." },
-  { icon: MessageCircle, title: "More Customer Inquiries", desc: "Drive engagement that translates into direct messages, calls, and customer interactions." },
-  { icon: Target, title: "Hyper-Local Targeting", desc: "Connect with your local audience effectively through trending and tailored reels." },
-  { icon: CheckCircle2, title: "Increased Footfall", desc: "Attract more customers to your physical shops and showrooms with compelling digital content." },
+  { icon: TrendingUp, title: "Boost Online Visibility & Reach", desc: "Increase your brand's reach, get noticed by more potential customers, and connect with your local audience through trending and tailored reels." },
+  { icon: Zap, title: "Professional Brand & Engagement", desc: "Elevate your brand with high-quality visuals, consistent messaging, and drive engagement that translates into direct messages, calls, and customer interactions." },
+  { icon: CheckCircle2, title: "Increased Footfall & Growth", desc: "Attract more customers to your physical shops and showrooms with compelling digital content and targeted hyper-local marketing strategies." },
 ]
 
 export function WorkflowBenefits() {
   return (
-    <section className="relative overflow-hidden px-4 py-20 sm:px-6 md:px-8">
+    <section className="relative overflow-hidden px-4 py-12 sm:px-6 md:px-8 md:py-16">
       <div className="mx-auto max-w-7xl">
         {/* Workflow Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-16 text-center"
+          className="mb-10 text-center"
         >
-          <h2 className="mb-4 text-3xl font-black tracking-tight sm:text-4xl md:text-5xl text-white">
+          <h2 className="mb-4 text-2xl font-black tracking-tight sm:text-4xl md:text-5xl text-white">
             Our Simple <span className="text-sky-300">Workflow</span>
           </h2>
           <p className="text-white/70 max-w-2xl mx-auto">From concept to completion, we make the process seamless.</p>
@@ -78,9 +76,9 @@ export function WorkflowBenefits() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-12 text-center"
+          className="mb-8 text-center"
         >
-          <h2 className="mb-4 text-3xl font-black tracking-tight sm:text-4xl md:text-5xl text-white">
+          <h2 className="mb-4 text-2xl font-black tracking-tight sm:text-4xl md:text-5xl text-white">
             Benefits for <span className="text-sky-300">Your Business</span>
           </h2>
         </motion.div>
@@ -127,7 +125,7 @@ export function WorkflowBenefits() {
           />
           <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:40px_40px] mix-blend-overlay" />
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-center mb-12 relative z-10 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-center mb-8 relative z-10 tracking-tight">
             <span className="text-white">Ideal for </span>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-indigo-400 drop-shadow-[0_0_15px_rgba(98,168,255,0.4)]">Businesses Like Yours</span>
           </h2>

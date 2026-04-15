@@ -6,41 +6,25 @@ import { Camera, Video, Share2, Palette, TrendingUp, Sparkles } from "lucide-rea
 const services = [
   {
     icon: Camera,
-    title: "Photoshoot Packages",
-    description: "Capturing the essence of your products, outlets, menus, and events with professional photography.",
-    features: ["Product Photography", "Outlet & Menu Shoots", "Event Coverage"],
+    title: "Photography & Creative Design",
+    description: "Capturing the essence of your products, outlets, menus, and events with professional photography, plus designing eye-catching flyers, banners, and social media posts.",
+    features: ["Product Photography", "Outlet & Menu Shoots", "Event Coverage", "Flyer & Banner Design", "Brand Identity"],
     gradient: "from-sky-500 to-indigo-500",
     bgGlow: "rgba(98, 168, 255, 0.18)"
   },
   {
     icon: Video,
-    title: "Reel Video Creation",
-    description: "Crafting creative, trending, and storytelling short videos to engage your audience.",
-    features: ["Trending Audios", "Creative Storytelling", "Fast Turnaround"],
+    title: "Reels & Social Media",
+    description: "Crafting creative, trending short videos and managing your social media with strategic planning, captivating captions, and community engagement.",
+    features: ["Trending Audios", "Creative Storytelling", "Content Calendar", "Community Engagement", "Fast Turnaround"],
     gradient: "from-sky-500 to-cyan-400",
     bgGlow: "rgba(129, 227, 255, 0.18)"
   },
   {
-    icon: Share2,
-    title: "Social Media Management",
-    description: "Full-service management including posting, captivating captions, and strategic planning.",
-    features: ["Content Calendar", "Captivating Captions", "Community Engagement"],
-    gradient: "from-indigo-500 to-sky-500",
-    bgGlow: "rgba(115, 147, 255, 0.18)"
-  },
-  {
-    icon: Palette,
-    title: "Creative Content Design",
-    description: "Designing eye-catching flyers, banners, and social media posts that elevate your brand.",
-    features: ["Flyer & Banner Design", "Social Media Graphics", "Brand Identity"],
-    gradient: "from-cyan-400 to-sky-500",
-    bgGlow: "rgba(129, 227, 255, 0.18)"
-  },
-  {
     icon: TrendingUp,
-    title: "Marketing Strategy Plans",
-    description: "Developing monthly growth and engagement strategies to boost your online presence.",
-    features: ["Monthly Growth Plans", "Performance Tracking", "Audience Targeting"],
+    title: "Marketing Strategy & Growth",
+    description: "Developing monthly growth and engagement strategies with performance tracking, audience targeting, and social media graphics to boost your online presence.",
+    features: ["Monthly Growth Plans", "Performance Tracking", "Audience Targeting", "Social Media Graphics", "Campaign Planning"],
     gradient: "from-blue-500 to-indigo-500",
     bgGlow: "rgba(98, 168, 255, 0.18)"
   },
@@ -68,7 +52,7 @@ const cardVariants = {
 
 export function Services() {
   return (
-    <section className="relative overflow-hidden px-4 py-20 sm:px-6 md:px-8 md:py-28">
+    <section className="relative overflow-hidden px-4 py-12 sm:px-6 md:px-8 md:py-16">
       <div className="section-shell relative mx-auto max-w-7xl">
         {/* Section header */}
         <motion.div
@@ -76,7 +60,7 @@ export function Services() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="mb-12 text-center md:mb-16"
+          className="mb-8 text-center md:mb-10"
         >
           <motion.span 
             className="mb-4 inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-bold uppercase tracking-[0.28em] glass-card robot-panel sm:px-5 sm:text-sm bg-white/5"
@@ -84,7 +68,7 @@ export function Services() {
             <Sparkles className="h-4 w-4 text-sky-300" />
             <span className="text-sky-100">Our Comprehensive Services</span>
           </motion.span>
-          <h2 className="mb-4 text-3xl font-black tracking-tight sm:text-4xl md:text-5xl lg:text-7xl text-white">
+          <h2 className="mb-4 text-xl font-black tracking-tight sm:text-3xl md:text-4xl lg:text-5xl text-white">
             <span>What We</span>
             <br />
             <span className="gradient-text-alt">Offer You</span>

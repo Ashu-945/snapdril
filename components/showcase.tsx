@@ -55,6 +55,86 @@ const photoShowcase = [
     likes: "11.1K",
     views: "39K"
   },
+  {
+    id: 7,
+    title: "Studio Identity Shot",
+    category: "Commercial",
+    image: "/snapdrill-media/logoPhoto.jpg",
+    likes: "7.6K",
+    views: "25K"
+  },
+  {
+    id: 8,
+    title: "Event Celebration",
+    category: "Events",
+    image: "/snapdrill-media/Rcs1.png",
+    likes: "14.2K",
+    views: "52K"
+  },
+  {
+    id: 9,
+    title: "Grand Occasion",
+    category: "Wedding",
+    image: "/snapdrill-media/Rcs2.png",
+    likes: "10.8K",
+    views: "41K"
+  },
+  {
+    id: 10,
+    title: "Festive Moments",
+    category: "Events",
+    image: "/snapdrill-media/Rcs3.png",
+    likes: "13.7K",
+    views: "49K"
+  },
+  {
+    id: 11,
+    title: "Client Success Story",
+    category: "Commercial",
+    image: "/snapdrill-media/Rcs4.png",
+    likes: "8.9K",
+    views: "36K"
+  },
+  {
+    id: 12,
+    title: "Brand Transformation",
+    category: "Brand",
+    image: "/snapdrill-media/Rcs5.png",
+    likes: "16.1K",
+    views: "61K"
+  },
+  {
+    id: 13,
+    title: "Cinematic Event Coverage",
+    category: "Events",
+    image: "/snapdrill-media/Rcs6.jpg",
+    likes: "12.2K",
+    views: "45K"
+  },
+  {
+    id: 14,
+    title: "Gourmet Visuals",
+    category: "Commercial",
+    image: "/snapdrill-media/kanhaiyacorner.jpg",
+    likes: "9.8K",
+    views: "38K"
+  },
+  {
+    id: 16,
+    title: "Beauty & Style Portrait",
+    category: "Portrait",
+    image: "/snapdrill-media/salon.png",
+    likes: "11.5K",
+    views: "42K"
+  },
+  {
+    id: 17,
+    title: "Hospitality Showcase",
+    category: "Commercial",
+    image: "/snapdrill-media/tcc.jpg",
+    likes: "8.4K",
+    views: "31K"
+  },
 ]
 
 const reelShowcase = [
@@ -63,7 +143,7 @@ const reelShowcase = [
     title: "Wedding Reel Cut",
     platform: "Instagram",
     video: "/snapdrill-media/reelA.mp4",
-    poster: "/snapdrill-media/photoA.jpg",
+    poster: "/snapdrill-media/Rcs1.png",
     views: "2.5M",
     likes: "180K",
     icon: Instagram
@@ -73,7 +153,7 @@ const reelShowcase = [
     title: "Brand Launch Reel",
     platform: "Instagram",
     video: "/snapdrill-media/reelB.mp4",
-    poster: "/snapdrill-media/photoB.jpg",
+    poster: "/snapdrill-media/Rcs2.png",
     views: "1.8M",
     likes: "95K",
     icon: Instagram
@@ -83,7 +163,7 @@ const reelShowcase = [
     title: "Social Promo Reel",
     platform: "Instagram",
     video: "/snapdrill-media/reelC.mp4",
-    poster: "/snapdrill-media/photoC.jpg",
+    poster: "/snapdrill-media/Rcs3.png",
     views: "950K",
     likes: "45K",
     icon: Instagram
@@ -93,7 +173,7 @@ const reelShowcase = [
     title: "Event Energy Reel",
     platform: "Instagram",
     video: "/snapdrill-media/reelD.mp4",
-    poster: "/snapdrill-media/photoD.jpg",
+    poster: "/snapdrill-media/Rcs4.png",
     views: "1.1M",
     likes: "88K",
     icon: Instagram
@@ -103,19 +183,39 @@ const reelShowcase = [
     title: "Product Promo Reel",
     platform: "Instagram",
     video: "/snapdrill-media/reelE.mp4",
-    poster: "/snapdrill-media/photoE.jpg",
+    poster: "/snapdrill-media/Rcs5.png",
     views: "1.6M",
     likes: "102K",
     icon: Instagram
   },
   {
     id: 6,
-    title: "Behind The Scenes Reel",
+    title: "Creative Showreel",
+    platform: "Instagram",
+    video: "/snapdrill-media/aa.mp4",
+    poster: "/snapdrill-media/photoD.jpg",
+    views: "1.3M",
+    likes: "76K",
+    icon: Instagram
+  },
+  {
+    id: 7,
+    title: "Behind The Scenes",
     platform: "Instagram",
     video: "/snapdrill-media/ab.mp4",
     poster: "/snapdrill-media/logoPhoto.jpg",
     views: "730K",
     likes: "39K",
+    icon: Instagram
+  },
+  {
+    id: 8,
+    title: "Cinematic Moments",
+    platform: "Instagram",
+    video: "/snapdrill-media/reelF.mp4",
+    poster: "/snapdrill-media/Rcs6.jpg",
+    views: "890K",
+    likes: "58K",
     icon: Instagram
   },
 ]
@@ -124,7 +224,7 @@ export function Showcase() {
   const [activeTab, setActiveTab] = useState<"photos" | "reels">("photos")
 
   return (
-    <section className="relative overflow-hidden px-4 py-20 sm:px-6 md:px-8 md:py-28">
+    <section className="relative overflow-hidden px-4 py-12 sm:px-6 md:px-8 md:py-16">
       <div className="section-shell mx-auto max-w-7xl">
         {/* Section Header */}
         <motion.div
@@ -132,9 +232,9 @@ export function Showcase() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="mb-12 text-center md:mb-16"
+          className="mb-8 text-center md:mb-10"
         >
-          <motion.span 
+          <motion.span
             className="mb-4 inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-bold uppercase tracking-[0.28em] glass-card robot-panel sm:px-5 sm:text-sm"
             animate={{ boxShadow: ["0 0 18px rgba(112, 167, 255, 0.25)", "0 0 28px rgba(129, 227, 255, 0.18)", "0 0 18px rgba(112, 167, 255, 0.25)"] }}
             transition={{ duration: 2, repeat: Infinity }}
@@ -142,7 +242,7 @@ export function Showcase() {
             <Sparkles className="h-4 w-4 text-sky-300" />
             <span className="text-sky-100">Featured Work</span>
           </motion.span>
-          <h2 className="mb-4 text-3xl font-black tracking-tight sm:text-4xl md:text-5xl lg:text-7xl">
+          <h2 className="mb-4 text-3xl font-black tracking-tight sm:text-4xl md:text-5xl lg:text-6xl">
             <span className="gradient-text">Work That Helps</span>
             <br />
             <span className="gradient-text-alt">Brands Stand Out</span>
@@ -157,16 +257,15 @@ export function Showcase() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-10 flex justify-center md:mb-12"
+          className="mb-6 flex justify-center md:mb-8"
         >
           <div className="inline-flex w-full max-w-md gap-2 rounded-2xl glass-card p-2 robot-panel">
             <motion.button
               onClick={() => setActiveTab("photos")}
-              className={`flex flex-1 items-center justify-center gap-2 rounded-xl px-4 py-3 text-sm font-bold transition-all sm:px-6 sm:text-base ${
-                activeTab === "photos"
+              className={`flex flex-1 items-center justify-center gap-2 rounded-xl px-4 py-3 text-sm font-bold transition-all sm:px-6 sm:text-base ${activeTab === "photos"
                   ? "bg-gradient-to-r from-sky-500 via-blue-500 to-indigo-500 text-white shadow-xl"
                   : "text-foreground/70 hover:text-foreground"
-              }`}
+                }`}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
@@ -175,11 +274,10 @@ export function Showcase() {
             </motion.button>
             <motion.button
               onClick={() => setActiveTab("reels")}
-              className={`flex flex-1 items-center justify-center gap-2 rounded-xl px-4 py-3 text-sm font-bold transition-all sm:px-6 sm:text-base ${
-                activeTab === "reels"
+              className={`flex flex-1 items-center justify-center gap-2 rounded-xl px-4 py-3 text-sm font-bold transition-all sm:px-6 sm:text-base ${activeTab === "reels"
                   ? "bg-gradient-to-r from-sky-500 via-blue-500 to-indigo-500 text-white shadow-xl"
                   : "text-foreground/70 hover:text-foreground"
-              }`}
+                }`}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
@@ -214,13 +312,13 @@ export function Showcase() {
                     className="h-72 w-full object-cover transition-transform duration-700 group-hover:scale-110 sm:h-80 lg:h-96"
                     whileHover={{ scale: 1.1 }}
                   />
-                  
+
                   {/* Gradient Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  
+
                   {/* Category Badge */}
                   <div className="absolute top-4 left-4">
-                    <motion.span 
+                    <motion.span
                       className="px-4 py-2 rounded-full text-xs font-bold text-white glass-dark"
                       initial={{ opacity: 0, x: -20 }}
                       whileInView={{ opacity: 1, x: 0 }}
@@ -287,13 +385,13 @@ export function Showcase() {
                     onMouseLeave={(e) => { e.currentTarget.pause() }}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                  
+
                   {/* Gradient Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/20" />
-                  
+
                   {/* Platform Badge */}
                   <div className="absolute top-4 left-4 flex items-center gap-2">
-                    <motion.div 
+                    <motion.div
                       className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-sky-500 to-indigo-500"
                       animate={{ scale: [1, 1.1, 1] }}
                       transition={{ duration: 2, repeat: Infinity }}
@@ -335,7 +433,7 @@ export function Showcase() {
 
                   {/* Animated Border */}
                   <motion.div
-                      className="absolute inset-0 rounded-3xl opacity-0 transition-opacity sm:group-hover:opacity-100"
+                    className="absolute inset-0 rounded-3xl opacity-0 transition-opacity sm:group-hover:opacity-100"
                     style={{
                       background: "linear-gradient(90deg, rgba(98, 168, 255, 0.35), rgba(129, 227, 255, 0.3), rgba(98, 168, 255, 0.35))",
                       padding: "3px",

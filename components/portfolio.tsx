@@ -9,32 +9,6 @@ const categories = ["All", "Weddings", "Reels", "Commercial", "Events"]
 const portfolioItems = [
   {
     id: 1,
-    title: "Wedding Highlight Frame",
-    category: "Weddings",
-    type: "photo",
-    image: "/snapdrill-media/photoA.jpg",
-    description: "A beautiful sunset ceremony captured in warm golden tones"
-  },
-  {
-    id: 2,
-    title: "Brand Launch Reel",
-    category: "Commercial",
-    type: "reel",
-    video: "/snapdrill-media/reelA.mp4",
-    poster: "/snapdrill-media/photoA.jpg",
-    description: "A clean brand reel built to look premium across social platforms"
-  },
-  {
-    id: 3,
-    title: "Lifestyle Promo Reel",
-    category: "Reels",
-    type: "reel",
-    video: "/snapdrill-media/reelB.mp4",
-    poster: "/snapdrill-media/photoB.jpg",
-    description: "Short-form content designed for stronger reach and engagement"
-  },
-  {
-    id: 4,
     title: "Brand Portrait Coverage",
     category: "Commercial",
     type: "photo",
@@ -42,41 +16,33 @@ const portfolioItems = [
     description: "Commercial event coverage with attention to detail"
   },
   {
-    id: 5,
-    title: "Pre-Wedding Story",
-    category: "Weddings",
-    type: "photo",
-    image: "/snapdrill-media/photoC.jpg",
-    description: "Romantic location wedding celebration"
-  },
-  {
-    id: 6,
-    title: "Event Motion Cut",
+    id: 2,
+    title: "Lifestyle Promo Reel",
     category: "Reels",
     type: "reel",
-    video: "/snapdrill-media/reelC.mp4",
-    poster: "/snapdrill-media/photoC.jpg",
+    video: "/snapdrill-media/reelB.mp4",
+    poster: "/snapdrill-media/Rcs2.png",
+    description: "Short-form content designed for stronger reach and engagement"
+  },
+  {
+    id: 3,
+    title: "Product Campaign Shot",
+    category: "Commercial",
+    type: "photo",
+    image: "/snapdrill-media/photoD.jpg",
+    description: "Professional product photography with studio finish"
+  },
+  {
+    id: 4,
+    title: "Event Energy Reel",
+    category: "Reels",
+    type: "reel",
+    video: "/snapdrill-media/reelD.mp4",
+    poster: "/snapdrill-media/Rcs4.png",
     description: "Adventure and event content creation"
   },
   {
-    id: 7,
-    title: "Product Promo Reel",
-    category: "Commercial",
-    type: "reel",
-    video: "/snapdrill-media/reelE.mp4",
-    poster: "/snapdrill-media/photoE.jpg",
-    description: "High-end content for brand promotion"
-  },
-  {
-    id: 8,
-    title: "Product Feature Frame",
-    category: "Events",
-    type: "photo",
-    image: "/snapdrill-media/photoE.jpg",
-    description: "Elegant product photography and coverage"
-  },
-  {
-    id: 9,
+    id: 5,
     title: "Portrait Session",
     category: "Weddings",
     type: "photo",
@@ -84,29 +50,12 @@ const portfolioItems = [
     description: "A sharp, expressive portrait frame with studio polish"
   },
   {
-    id: 10,
-    title: "Behind The Lens Reel",
-    category: "Reels",
-    type: "reel",
-    video: "/snapdrill-media/ab.mp4",
-    poster: "/snapdrill-media/logoPhoto.jpg",
-    description: "An energetic behind-the-scenes reel with a branded thumbnail"
-  },
-  {
-    id: 11,
-    title: "Studio Identity Shot",
-    category: "Commercial",
-    type: "photo",
-    image: "/snapdrill-media/logoPhoto.jpg",
-    description: "A branded frame that strengthens the visual identity of the studio"
-  },
-  {
-    id: 12,
+    id: 6,
     title: "Motion Promo Cut",
     category: "Reels",
     type: "reel",
     video: "/snapdrill-media/aa.mp4",
-    poster: "/snapdrill-media/photoD.jpg",
+    poster: "/snapdrill-media/Rcs6.jpg",
     description: "A quick-cut promo reel built for social reach and impact"
   },
 ]
@@ -135,7 +84,7 @@ export function Portfolio() {
   }
 
   return (
-    <section className="relative px-4 py-20 sm:px-6 md:px-8 md:py-28">
+    <section className="relative px-4 py-12 sm:px-6 md:px-8 md:py-16">
       <div className="section-shell mx-auto max-w-7xl">
         {/* Section header */}
         <motion.div
@@ -143,12 +92,12 @@ export function Portfolio() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="mb-12 text-center"
+          className="mb-8 text-center"
         >
           <span className="mb-4 inline-block rounded-full px-4 py-2 text-xs font-medium uppercase tracking-[0.28em] glass-card robot-panel text-sky-100 sm:text-sm">
             Portfolio
           </span>
-          <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl">
+          <h2 className="mb-4 text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl lg:text-5xl">
             <span className="gradient-text">Selected Work</span>
           </h2>
           <p className="mx-auto max-w-xl text-sm text-muted-foreground sm:text-base">
@@ -162,7 +111,7 @@ export function Portfolio() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mb-12 flex flex-wrap justify-center gap-3"
+          className="mb-8 flex flex-wrap justify-center gap-3"
         >
           {categories.map((category) => (
             <motion.button

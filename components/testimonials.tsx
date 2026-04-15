@@ -26,7 +26,7 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <section className="relative overflow-hidden bg-secondary/30 px-6 py-24 md:py-32">
+    <section className="relative overflow-hidden bg-secondary/30 px-6 py-16 md:py-20">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-[0.02]">
         <div 
@@ -45,7 +45,7 @@ export function Testimonials() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="mb-16 text-center"
+          className="mb-10 text-center"
         >
           <span className="mb-4 inline-block text-sm font-medium uppercase tracking-widest text-primary" style={{ fontFamily: 'var(--font-space-grotesk)' }}>
             Testimonials
